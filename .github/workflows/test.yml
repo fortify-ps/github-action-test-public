@@ -13,12 +13,11 @@ jobs:
       - name: Check Out Source Code
         uses: actions/checkout@v4
       - name: Run SSC CI Test
-        uses: fortify/github-action@feat/fcli-ci
+        uses: fortify/github-action@v3
         env:
-          FCLI_BOOTSTRAP_VERSION: dev_v3.x
           SSC_URL: ${{ vars.FH_STAGE_SSC_URL }}
           SSC_USER: ${{secrets.FH_STAGE_SSC_USER}}
           SSC_PASSWORD: ${{secrets.FH_STAGE_SSC_PWD}}
           SC_SAST_TOKEN: ${{secrets.FH_STAGE_SC_SAST_TOKEN}}
           SETUP_EXTRA_OPTS: --issue-template "Prioritized High Risk Issue Template"
-          SAST_SCAN_EXTRA_OPTS: --no-replace --sargs "'-scan-policy' 'classic'"
+          SAST_SCAN_EXTRA_OPTS: --no-replace
