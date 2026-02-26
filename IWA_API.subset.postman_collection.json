@@ -1,0 +1,3340 @@
+{
+	"info": {
+		"_postman_id": "c7236a64-d315-4f3b-b726-49a47dcc149a",
+		"name": "Insecure Web App (IWA) API",
+		"description": "This is the REST API for Insecure Web App (IWA) Pharmacy Direct. You can select a development or production server to test the API. Most operations require authentication via a user specific JWT token. To retrieve a JWT token for a user you can use the  '/authentication/sign-in' operation below and then copy the value of the 'accessToken' field. This value can then be entered when you click on the 'Authorize' button or lock icons.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9630190"
+	},
+	"item": [
+		{
+			"name": "api/v3",
+			"item": [
+				{
+					"name": "reviews",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Find review by Id",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "<Bearer Token>",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+													"description": "(Required) UUID of the review to be found. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										},
+										"description": "Find a review by UUID"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be found. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"96ab576c-c0ba-aa28-9bbc-2dc6e1f8c9ef\",\n  \"product\": {\n    \"id\": \"urn:uuid:0547300f-940e-0db3-df53-a92215b455ba\",\n    \"code\": \"consectetur consequat officia quis\",\n    \"name\": \"cupidatat\",\n    \"summary\": \"magna\",\n    \"description\": \"veniam anim amet\",\n    \"image\": \"minim amet nisi\",\n    \"price\": -25610873.854361802,\n    \"onSale\": false,\n    \"salePrice\": 39954746.859428346,\n    \"inStock\": false,\n    \"timeToStock\": -81956499,\n    \"rating\": -24039134,\n    \"available\": true\n  },\n  \"user\": {\n    \"id\": \"1994beb5-b4ba-261c-df92-83fb7fe5a1e4\",\n    \"username\": \"nulla anim ut\",\n    \"firstName\": \"veniam velit deserunt aliquip\",\n    \"lastName\": \"est veniam reprehenderit sint\",\n    \"email\": \"est velit nostrud sint\",\n    \"phone\": \"qui reprehenderit aute irure\",\n    \"address\": \"dolor minim\",\n    \"city\": \"minim\",\n    \"state\": \"ullamco\",\n    \"zip\": \"occaecat laboris\",\n    \"country\": \"sit magna quis\",\n    \"enabled\": true\n  },\n  \"reviewDate\": \"1971-01-13T01:17:05.090Z\",\n  \"comment\": \"occaecat labore velit\",\n  \"rating\": -63362603\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be found. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be found. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be found. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										},
+										{
+											"name": "Review Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be found. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be found. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Update an review",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "<Bearer Token>",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+													"description": "(Required) UUID of the review to be updated. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										},
+										"description": "Update an existing review"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"96ab576c-c0ba-aa28-9bbc-2dc6e1f8c9ef\",\n  \"product\": {\n    \"id\": \"urn:uuid:0547300f-940e-0db3-df53-a92215b455ba\",\n    \"code\": \"consectetur consequat officia quis\",\n    \"name\": \"cupidatat\",\n    \"summary\": \"magna\",\n    \"description\": \"veniam anim amet\",\n    \"image\": \"minim amet nisi\",\n    \"price\": -25610873.854361802,\n    \"onSale\": false,\n    \"salePrice\": 39954746.859428346,\n    \"inStock\": false,\n    \"timeToStock\": -81956499,\n    \"rating\": -24039134,\n    \"available\": true\n  },\n  \"user\": {\n    \"id\": \"1994beb5-b4ba-261c-df92-83fb7fe5a1e4\",\n    \"username\": \"nulla anim ut\",\n    \"firstName\": \"veniam velit deserunt aliquip\",\n    \"lastName\": \"est veniam reprehenderit sint\",\n    \"email\": \"est velit nostrud sint\",\n    \"phone\": \"qui reprehenderit aute irure\",\n    \"address\": \"dolor minim\",\n    \"city\": \"minim\",\n    \"state\": \"ullamco\",\n    \"zip\": \"occaecat laboris\",\n    \"country\": \"sit magna quis\",\n    \"enabled\": true\n  },\n  \"reviewDate\": \"1971-01-13T01:17:05.090Z\",\n  \"comment\": \"occaecat labore velit\",\n  \"rating\": -63362603\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										},
+										{
+											"name": "Review Not Found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										},
+										{
+											"name": "Internal Server Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete a review",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "<Bearer Token>",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+													"description": "(Required) UUID of the review to be updated. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										},
+										"description": "Delete an review"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Review Not Found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v3/reviews/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v3",
+														"reviews",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "822f734a-3d13-4ebc-bff6-9c36d29866a6",
+															"description": "(Required) UUID of the review to be updated. Cannot be empty."
+														},
+														{
+															"key": "protocol",
+															"value": "{{protocol}}",
+															"description": " (This can only be one of http,https)"
+														},
+														{
+															"key": "environment",
+															"value": "{{environment}}",
+															"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Find reviews by product and keyword(s)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Bearer Token>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v3/reviews?pid=eec467c8-5de9-4c7c-8541-7b31614d31a0&keywords=nostrud ex&offset=21300640&limit=21300640",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"reviews"
+									],
+									"query": [
+										{
+											"key": "pid",
+											"value": "eec467c8-5de9-4c7c-8541-7b31614d31a0",
+											"description": "UUID of the product to find reviews for."
+										},
+										{
+											"key": "keywords",
+											"value": "nostrud ex",
+											"description": "Keyword(s) search for reviews to be found."
+										},
+										{
+											"key": "offset",
+											"value": "21300640",
+											"description": "Offset of the starting record. 0 indicates the first record."
+										},
+										{
+											"key": "limit",
+											"value": "21300640",
+											"description": "Maximum records to return. The maximum value allowed is 50."
+										}
+									],
+									"variable": [
+										{
+											"key": "protocol",
+											"value": "{{protocol}}",
+											"description": " (This can only be one of http,https)"
+										},
+										{
+											"key": "environment",
+											"value": "{{environment}}",
+											"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+										}
+									]
+								},
+								"description": "Product and keyword search by %keyword% format"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews?pid=eec467c8-5de9-4c7c-8541-7b31614d31a0&keywords=nostrud ex&offset=21300640&limit=21300640",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"query": [
+												{
+													"key": "pid",
+													"value": "eec467c8-5de9-4c7c-8541-7b31614d31a0"
+												},
+												{
+													"key": "keywords",
+													"value": "nostrud ex"
+												},
+												{
+													"key": "offset",
+													"value": "21300640"
+												},
+												{
+													"key": "limit",
+													"value": "21300640"
+												}
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"372c0b93-c1d9-7776-18f9-5159d049516e\",\n    \"code\": \"qui id\",\n    \"name\": \"ex enim voluptate\",\n    \"summary\": \"Duis ullamco quis aute\",\n    \"description\": \"id in in\",\n    \"image\": \"ullamco laboris in\",\n    \"price\": -27913647.199027598,\n    \"onSale\": true,\n    \"salePrice\": 7322939.265867442,\n    \"inStock\": false,\n    \"timeToStock\": -83974172,\n    \"rating\": 19487882,\n    \"available\": true\n  },\n  {\n    \"id\": \"6f7601d2-c7af-244f-2dd3-4175a1243416\",\n    \"code\": \"irure consequat do eu\",\n    \"name\": \"dolor\",\n    \"summary\": \"Lorem esse\",\n    \"description\": \"anim dolore in\",\n    \"image\": \"officia enim occaecat reprehenderit cupidatat\",\n    \"price\": 84333309.66977769,\n    \"onSale\": true,\n    \"salePrice\": -66026868.59564058,\n    \"inStock\": true,\n    \"timeToStock\": 75635255,\n    \"rating\": 42086492,\n    \"available\": true\n  }\n]"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews?pid=eec467c8-5de9-4c7c-8541-7b31614d31a0&keywords=nostrud ex&offset=21300640&limit=21300640",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"query": [
+												{
+													"key": "pid",
+													"value": "eec467c8-5de9-4c7c-8541-7b31614d31a0"
+												},
+												{
+													"key": "keywords",
+													"value": "nostrud ex"
+												},
+												{
+													"key": "offset",
+													"value": "21300640"
+												},
+												{
+													"key": "limit",
+													"value": "21300640"
+												}
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews?pid=eec467c8-5de9-4c7c-8541-7b31614d31a0&keywords=nostrud ex&offset=21300640&limit=21300640",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"query": [
+												{
+													"key": "pid",
+													"value": "eec467c8-5de9-4c7c-8541-7b31614d31a0"
+												},
+												{
+													"key": "keywords",
+													"value": "nostrud ex"
+												},
+												{
+													"key": "offset",
+													"value": "21300640"
+												},
+												{
+													"key": "limit",
+													"value": "21300640"
+												}
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews?pid=eec467c8-5de9-4c7c-8541-7b31614d31a0&keywords=nostrud ex&offset=21300640&limit=21300640",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"query": [
+												{
+													"key": "pid",
+													"value": "eec467c8-5de9-4c7c-8541-7b31614d31a0"
+												},
+												{
+													"key": "keywords",
+													"value": "nostrud ex"
+												},
+												{
+													"key": "offset",
+													"value": "21300640"
+												},
+												{
+													"key": "limit",
+													"value": "21300640"
+												}
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews?pid=eec467c8-5de9-4c7c-8541-7b31614d31a0&keywords=nostrud ex&offset=21300640&limit=21300640",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"query": [
+												{
+													"key": "pid",
+													"value": "eec467c8-5de9-4c7c-8541-7b31614d31a0"
+												},
+												{
+													"key": "keywords",
+													"value": "nostrud ex"
+												},
+												{
+													"key": "offset",
+													"value": "21300640"
+												},
+												{
+													"key": "limit",
+													"value": "21300640"
+												}
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Create a new review",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Bearer Token>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v3/reviews",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"reviews"
+									],
+									"variable": [
+										{
+											"key": "protocol",
+											"value": "{{protocol}}",
+											"description": " (This can only be one of http,https)"
+										},
+										{
+											"key": "environment",
+											"value": "{{environment}}",
+											"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+										}
+									]
+								},
+								"description": "Creates a new review"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"96ab576c-c0ba-aa28-9bbc-2dc6e1f8c9ef\",\n  \"product\": {\n    \"id\": \"urn:uuid:0547300f-940e-0db3-df53-a92215b455ba\",\n    \"code\": \"consectetur consequat officia quis\",\n    \"name\": \"cupidatat\",\n    \"summary\": \"magna\",\n    \"description\": \"veniam anim amet\",\n    \"image\": \"minim amet nisi\",\n    \"price\": -25610873.854361802,\n    \"onSale\": false,\n    \"salePrice\": 39954746.859428346,\n    \"inStock\": false,\n    \"timeToStock\": -81956499,\n    \"rating\": -24039134,\n    \"available\": true\n  },\n  \"user\": {\n    \"id\": \"1994beb5-b4ba-261c-df92-83fb7fe5a1e4\",\n    \"username\": \"nulla anim ut\",\n    \"firstName\": \"veniam velit deserunt aliquip\",\n    \"lastName\": \"est veniam reprehenderit sint\",\n    \"email\": \"est velit nostrud sint\",\n    \"phone\": \"qui reprehenderit aute irure\",\n    \"address\": \"dolor minim\",\n    \"city\": \"minim\",\n    \"state\": \"ullamco\",\n    \"zip\": \"occaecat laboris\",\n    \"country\": \"sit magna quis\",\n    \"enabled\": true\n  },\n  \"reviewDate\": \"1971-01-13T01:17:05.090Z\",\n  \"comment\": \"occaecat labore velit\",\n  \"rating\": -63362603\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Review Already Exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"urn:uuid:3fee2c70-9b55-653c-8ca5-802cf4387648\",\n  \"userId\": \"urn:uuid:f30590af-b640-0ba8-c15d-28e3633f9b6d\",\n  \"reviewDate\": \"1972-01-14T07:55:42.330Z\",\n  \"comment\": \"qui tempor cillum labore\",\n  \"rating\": -48971168\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/reviews",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"reviews"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "site",
+					"item": [
+						{
+							"name": "Check if username is taken",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v3/site/username-already-exists/:username",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"site",
+										"username-already-exists",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "user1",
+											"description": "(Required) Username to check. Cannot be empty."
+										},
+										{
+											"key": "protocol",
+											"value": "{{protocol}}",
+											"description": " (This can only be one of http,https)"
+										},
+										{
+											"key": "environment",
+											"value": "{{environment}}",
+											"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+										}
+									]
+								},
+								"description": "Check if a user with the specified username already exists in the site"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/username-already-exists/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"username-already-exists",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "user1",
+													"description": "(Required) Username to check. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"email\": \"paria\",\n  \"firstName\": \"voluptate ut Ut est\",\n  \"lastName\": \"cupidatat inc\",\n  \"phone\": \"77494218\",\n  \"username\": \"nzu00\",\n  \"id\": \"459e4949-9495-0287-2a5b-8275f7fa2056\",\n  \"address\": \"Duis cillum\",\n  \"city\": \"exercitation culpa est\",\n  \"state\": \"officia commodo est magna Lorem\",\n  \"zip\": \"ut\",\n  \"country\": \"sint in\",\n  \"authorities\": [\n    {\n      \"id\": \"urn:uuid:69dab483-422a-ef21-a008-64fe6e9eabea\",\n      \"name\": \"ROLE_API\"\n    },\n    {\n      \"id\": \"urn:uuid:05e4dcc3-6ce8-593f-2169-8a2009642443\",\n      \"name\": \"ROLE_API\"\n    }\n  ],\n  \"enabled\": false\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/username-already-exists/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"username-already-exists",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "user1",
+													"description": "(Required) Username to check. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/username-already-exists/:username",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"username-already-exists",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "user1",
+													"description": "(Required) Username to check. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Check if email exists",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v3/site/email-already-exists/:email",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"site",
+										"email-already-exists",
+										":email"
+									],
+									"variable": [
+										{
+											"key": "email",
+											"value": "user1@localhost.com",
+											"description": "(Required) Email address to check. Cannot be empty."
+										},
+										{
+											"key": "protocol",
+											"value": "{{protocol}}",
+											"description": " (This can only be one of http,https)"
+										},
+										{
+											"key": "environment",
+											"value": "{{environment}}",
+											"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+										}
+									]
+								},
+								"description": "Check if a user with the specified email address already exists in the site"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/email-already-exists/:email",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"email-already-exists",
+												":email"
+											],
+											"variable": [
+												{
+													"key": "email",
+													"value": "user1@localhost.com",
+													"description": "(Required) Email address to check. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"email\": \"nostrud ullamco ipsum\",\n  \"firstName\": \"officia\",\n  \"lastName\": \"dolore culpa sunt\",\n  \"phone\": \"050345789735\",\n  \"username\": \"y4kwf\",\n  \"id\": \"urn:uuid:19f9d5fc-4530-0350-2a10-d427472c785a\",\n  \"address\": \"incididunt sed aliqua\",\n  \"city\": \"deserunt id aliquip\",\n  \"state\": \"commodo aute nulla magna Lorem\",\n  \"zip\": \"est irure magna sunt\",\n  \"country\": \"id consequat\",\n  \"authorities\": [\n    {\n      \"id\": \"a035d52a-b947-81e3-2a27-771dc51938ee\",\n      \"name\": \"ROLE_TEST\"\n    },\n    {\n      \"id\": \"urn:uuid:d7a2a7dd-7e17-486d-7899-114311f56891\",\n      \"name\": \"ROLE_CUSTOMER\"\n    }\n  ],\n  \"enabled\": true\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/email-already-exists/:email",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"email-already-exists",
+												":email"
+											],
+											"variable": [
+												{
+													"key": "email",
+													"value": "user1@localhost.com",
+													"description": "(Required) Email address to check. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/email-already-exists/:email",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"email-already-exists",
+												":email"
+											],
+											"variable": [
+												{
+													"key": "email",
+													"value": "user1@localhost.com",
+													"description": "(Required) Email address to check. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/email-already-exists/:email",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"email-already-exists",
+												":email"
+											],
+											"variable": [
+												{
+													"key": "email",
+													"value": "user1@localhost.com",
+													"description": "(Required) Email address to check. Cannot be empty."
+												},
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Register a new user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"et\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"culpa laboris ex \",\n  \"password\": \"ad labore anim dolore\",\n  \"phone\": \"777729653851\",\n  \"username\": \"pygr\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v3/site/register-user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"site",
+										"register-user"
+									],
+									"variable": [
+										{
+											"key": "protocol",
+											"value": "{{protocol}}",
+											"description": " (This can only be one of http,https)"
+										},
+										{
+											"key": "environment",
+											"value": "{{environment}}",
+											"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+										}
+									]
+								},
+								"description": "Register a new user with the site"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"et\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"culpa laboris ex \",\n  \"password\": \"ad labore anim dolore\",\n  \"phone\": \"777729653851\",\n  \"username\": \"pygr\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/register-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"register-user"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"username\": \"nostrud mollit officia non\",\n  \"password\": \"commodo voluptate Duis nostrud\",\n  \"firstName\": \"do laboris ullamco\",\n  \"lastName\": \"ullamco in ea\",\n  \"email\": \"elit tem\",\n  \"phone\": \"culpa proid\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"et\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"culpa laboris ex \",\n  \"password\": \"ad labore anim dolore\",\n  \"phone\": \"777729653851\",\n  \"username\": \"pygr\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/register-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"register-user"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "User Already Exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"et\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"culpa laboris ex \",\n  \"password\": \"ad labore anim dolore\",\n  \"phone\": \"777729653851\",\n  \"username\": \"pygr\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/register-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"register-user"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"et\",\n  \"firstName\": \"occaecat\",\n  \"lastName\": \"culpa laboris ex \",\n  \"password\": \"ad labore anim dolore\",\n  \"phone\": \"777729653851\",\n  \"username\": \"pygr\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/register-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"register-user"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Subscribe a new user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -44080311,\n  \"firstName\": \"dolo\",\n  \"lastName\": \"cupidatat sint\",\n  \"email\": \"esse commodo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v3/site/subscribe-user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"site",
+										"subscribe-user"
+									],
+									"variable": [
+										{
+											"key": "protocol",
+											"value": "{{protocol}}",
+											"description": " (This can only be one of http,https)"
+										},
+										{
+											"key": "environment",
+											"value": "{{environment}}",
+											"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+										}
+									]
+								},
+								"description": "Subscribe a new user to the newsletter"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -44080311,\n  \"firstName\": \"dolo\",\n  \"lastName\": \"cupidatat sint\",\n  \"email\": \"esse commodo\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/subscribe-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"subscribe-user"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": -44080311,\n  \"firstName\": \"dolo\",\n  \"lastName\": \"cupidatat sint\",\n  \"email\": \"esse commodo\"\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -44080311,\n  \"firstName\": \"dolo\",\n  \"lastName\": \"cupidatat sint\",\n  \"email\": \"esse commodo\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/subscribe-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"subscribe-user"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "User Already Exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -44080311,\n  \"firstName\": \"dolo\",\n  \"lastName\": \"cupidatat sint\",\n  \"email\": \"esse commodo\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/subscribe-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"subscribe-user"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": -44080311,\n  \"firstName\": \"dolo\",\n  \"lastName\": \"cupidatat sint\",\n  \"email\": \"esse commodo\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/subscribe-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"subscribe-user"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Sign in",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"password\": \"Duis nisi consectetur ut\",\n  \"username\": \"proident ut occaecat minim sunt\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v3/site/sign-in",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"site",
+										"sign-in"
+									],
+									"variable": [
+										{
+											"key": "protocol",
+											"value": "{{protocol}}",
+											"description": " (This can only be one of http,https)"
+										},
+										{
+											"key": "environment",
+											"value": "{{environment}}",
+											"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+										}
+									]
+								},
+								"description": "Sign in to the system"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"Duis nisi consectetur ut\",\n  \"username\": \"proident ut occaecat minim sunt\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/sign-in",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"sign-in"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"email\": \"nostrud ullamco ipsum\",\n  \"firstName\": \"officia\",\n  \"lastName\": \"dolore culpa sunt\",\n  \"phone\": \"050345789735\",\n  \"username\": \"y4kwf\",\n  \"id\": \"urn:uuid:19f9d5fc-4530-0350-2a10-d427472c785a\",\n  \"address\": \"incididunt sed aliqua\",\n  \"city\": \"deserunt id aliquip\",\n  \"state\": \"commodo aute nulla magna Lorem\",\n  \"zip\": \"est irure magna sunt\",\n  \"country\": \"id consequat\",\n  \"authorities\": [\n    {\n      \"id\": \"a035d52a-b947-81e3-2a27-771dc51938ee\",\n      \"name\": \"ROLE_TEST\"\n    },\n    {\n      \"id\": \"urn:uuid:d7a2a7dd-7e17-486d-7899-114311f56891\",\n      \"name\": \"ROLE_CUSTOMER\"\n    }\n  ],\n  \"enabled\": true\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"Duis nisi consectetur ut\",\n  \"username\": \"proident ut occaecat minim sunt\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/sign-in",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"sign-in"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"Duis nisi consectetur ut\",\n  \"username\": \"proident ut occaecat minim sunt\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/sign-in",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"sign-in"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"Duis nisi consectetur ut\",\n  \"username\": \"proident ut occaecat minim sunt\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/sign-in",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"sign-in"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"password\": \"Duis nisi consectetur ut\",\n  \"username\": \"proident ut occaecat minim sunt\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/sign-in",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"sign-in"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Get the site status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v3/site/status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v3",
+										"site",
+										"status"
+									],
+									"variable": [
+										{
+											"key": "protocol",
+											"value": "{{protocol}}",
+											"description": " (This can only be one of http,https)"
+										},
+										{
+											"key": "environment",
+											"value": "{{environment}}",
+											"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+										}
+									]
+								},
+								"description": "Get the site message of the day"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/status",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"status"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"health\": \"anim aute eu pariatu\",\n    \"motd\": \"voluptate magna\"\n  },\n  {\n    \"health\": \"occaecat Ut c\",\n    \"motd\": \"culpa ut aliqua aliquip nostrud\"\n  }\n]"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v3/site/status",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v3",
+												"site",
+												"status"
+											],
+											"variable": [
+												{
+													"key": "protocol",
+													"value": "{{protocol}}",
+													"description": " (This can only be one of http,https)"
+												},
+												{
+													"key": "environment",
+													"value": "{{environment}}",
+													"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": false,\n  \"timestamp\": \"1964-10-03T17:08:53.142Z\",\n  \"errors\": [\n    \"sed Ut eiusmod id\",\n    \"in est dolore\"\n  ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "https",
+			"type": "any",
+			"description": " (This can only be one of http,https)"
+		},
+		{
+			"key": "environment",
+			"value": "iwa.onfortify.com",
+			"type": "any",
+			"description": " (This can only be one of localhost:8888,iwa.onfortify.com)"
+		},
+		{
+			"key": "baseUrl",
+			"value": "{{protocol}}://{{environment}}",
+			"type": "string"
+		}
+	]
+}
